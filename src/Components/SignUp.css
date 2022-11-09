@@ -1,0 +1,24 @@
+.form__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+}
+.form__container h3 {
+    font-size: 1.5rem;
+}
+.form__form {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.form__form input {
+    margin-top: 2rem;
+   margin-bottom: 1rem;
+}

@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import AuthContext from './Store/Authcontext';
 import { GALACTIC_API } from "../Config";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import './Login.css'
 
 const Login = () => {
-  
+  const authCtx = useContext(AuthContext)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
@@ -32,20 +34,27 @@ const Login = () => {
         if(res.ok) {
           console.log(`SUCCESS IN LOGIN, LOGIN.JS`)
         }
+        console.log(`AFTER AUTH IN LOGIN`)
         console.log(res.data)
+        console.log(res.data.token, res.data.exp, res.data.userId)
         alert(`You are now logged in.`)
-        // navigate('/main')
+        authCtx.login(res.data.token, res.data.exp, res.data.userId)
+
+        navigate('/main')
       })
       .catch((err) => {
         console.log(`ERROR IN PROMISE OF LOGIN.JSX`)
         console.log(err)
       })
     }
+    setUsername('')
+    setPassword('')
+    setPasswordCheck('')
   };
   return (
-    <div>
-    <form>
+    <div className='form__container'>
       <h3>Log In</h3>
+    <form className='form__form'>
       <input
         type="text"
         placeholder="Username"

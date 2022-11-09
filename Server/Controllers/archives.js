@@ -1,4 +1,5 @@
-const {User, Archive} = require('../models/index.js')
+const {User} = require('../models/User')
+const {Archives} = require('../models/Archives')
 
 module.exports = {
     addArchive: async (req, res) => {

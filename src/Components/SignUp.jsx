@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { GALACTIC_API } from "../Config";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import './SignUp.css'
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -36,7 +37,8 @@ const SignUp = () => {
       .then((res) => {
         console.log(`SUCCES IN REGISTERING - PROMISE IN SIGN UP.JS`)
         console.log(res.data)
-        // navigate('/login')
+        alert(`Thank you for registering, you will be redirected to the login page.`)
+        navigate('/login')
         
       })
       .catch((err) => {
@@ -44,12 +46,16 @@ const SignUp = () => {
         console.log(err)
       })
     }
+    setUsername('')
+    setPassword('')
+    setPasswordCheck('')
+    setEmail('')
   };
 
   return (
-    <div>
-      <form>
+    <div className="form__container">
         <h3>Sign up!</h3>
+      <form className="form__form">
         <input
           type="text"
           placeholder="create a username"

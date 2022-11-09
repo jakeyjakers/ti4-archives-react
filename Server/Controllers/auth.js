@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { SECRET } = process.env;
-const { User } = require("../models/user");
+const { User } = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -23,10 +23,10 @@ module.exports = {
 
     const { username, password, email } = req.body;
     try {
-      let foundUserName = await User.findAll({
-        where: { uersame: username },
+      let foundUserName = await User.findOne({
+        where: { username: username },
       });
-
+      console.log(foundUserName)
       if (foundUserName) {
         res
           .status(400)
@@ -34,7 +34,7 @@ module.exports = {
             `Username Already Exists, Please Choose Another Username. Thank You. `
           );
       }
-      let foundUserEmail = await User.findAll({
+      let foundUserEmail = await User.findOne({
         where: { email: email },
       });
       if (foundUserEmail) {
@@ -53,6 +53,7 @@ module.exports = {
           email: email,
         });
         res.sendStatus(201);
+        console.log(`USER CREATED`)
       }
     } catch (error) {
       console.log(`ERROR IN REGISTER AUTH.JS`);

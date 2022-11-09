@@ -22,11 +22,11 @@ module.exports = {
             allowNull: false
         },
         players: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         races: {
-            type: DataTypes.ARRAY,
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false
         },
         victor: {

@@ -22,8 +22,8 @@ function App() {
       <Route path='/main'element={<Main />}/>
       <Route path='/signup' element={<SignUp />}/>
       <Route path='/login' element={<Login />}/>
-      <Route path='/profile' element={<Accountmain />}/>
-      <Route path='/newarchive' element={<Newarchive />}/>
+      {authCtx.token && <Route path='/profile' element={<Accountmain />}/>}
+      {authCtx.token && <Route path='/newarchive' element={<Newarchive />}/>}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
     </main>
