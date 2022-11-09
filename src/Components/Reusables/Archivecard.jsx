@@ -3,8 +3,8 @@ import ti4img from '../../Stockimages/ti4stock.jpg'
 import './Archivecard.css'
 const Archivecard = () => {
   return (
-    <div className='arvhive__card'>
-        <img src={ti4img} className='arvhive__img'/>
+    <div className='archive__card'>
+        <img src={ti4img} className='archive__img'/>
         <h2 className='arvhive__data'>Game Title: </h2>
         <h2 className='arvhive__data'>Game Length: </h2>
         <h2 className='arvhive__data'>Amount Of Players: </h2>
