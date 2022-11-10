@@ -33,7 +33,7 @@ app.post('/login', login)
 app.post('/add-archive', isAuthenticated, addArchive)
 app.delete('/delete-archive', isAuthenticated, deleteArchive)
 app.put('/edit-archive', isAuthenticated, editArchive)
-app.get('/get-user-archives', isAuthenticated, getUserArchives)
+app.get('/get-user-archives/:userId', isAuthenticated, getUserArchives)
 app.get('/get-account-info', isAuthenticated, getUserAccountInfo)
 app.get('/get-all-archives', isAuthenticated, getAllArchives)
 

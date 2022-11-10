@@ -9,6 +9,10 @@ module.exports = {
             autoIncrement: true,
             primaryKey: true
         },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         image: {
             type: DataTypes.STRING,
             allowNull: true
@@ -21,17 +25,26 @@ module.exports = {
             type: DataTypes.STRING,
             allowNull: false
         },
-        players: {
+        amount: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
         races: {
             type: DataTypes.ARRAY(DataTypes.STRING),
+            defaultValue: [],
             allowNull: false
         },
         victor: {
             type: DataTypes.STRING,
             allowNull: false
-        }
-    })
+        },
+        story: {
+            type: DataTypes.TEXT({limit: 10000}),
+            allowNull: true
+        },
+       
+    },  {
+        freezeTableName: true,
+    },
+    )
 }

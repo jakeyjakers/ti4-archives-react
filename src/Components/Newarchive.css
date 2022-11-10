@@ -1,0 +1,32 @@
+.form__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+}
+.form__form {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: black;
+}
+.form__form input {
+    margin-top: 2rem;
+   margin-bottom: 1rem;
+   width: 75%;
+}
+.form__form textarea {
+    width: 75%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.form__form button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
