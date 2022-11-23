@@ -22,3 +22,25 @@
     color: white;
     font-size: large;
 }
+.header__dropdown {
+    display: inline-block;
+    position: relative;
+}
+.header__dropdown__content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+}
+.header__dropdown:hover .header__dropdown__content {
+    display: block;
+}
+.header__dropdown__content .header__links {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+.header__dropdown__content .header__links:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}

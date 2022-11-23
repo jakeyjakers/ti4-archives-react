@@ -16,10 +16,18 @@ const Header = () => {
         {authCtx.token ? (
           <Fragment>
             {" "}
-            
-            <NavLink className="header__links" to="/profile">
+            <div  className="header__dropdown">
+              <h3>Profile</h3>
+              <div className="header__dropdown__content">
+              <NavLink className="header__links" to="/profile">
               Profile{" "}
             </NavLink>
+            <NavLink className='header__links' to='/profile/details'>
+              Profile Details{" "}
+            </NavLink>
+              </div>
+            </div>
+            
             <NavLink className="header__links" to="/newarchive">
               New Archive{" "}
             </NavLink>{" "}
